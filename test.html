@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+
+<br>
+<h2>Music Genre Classifier</h2>
+<p>Please Choose a file</p>
+<form action="/predict" method="post" enctype="multipart/form-data">
+  <label for="audioUpload" class="upload-label">
+      Choose...
+  </label>
+  <input type="file" name="file" id="audioUpload" accept=".wav">
+
+  <div class="audio-section">
+      <div class="audio-preview">
+          <div id="audioPreview">
+		     {{test}}
+          </div>
+      </div>
+      <div>
+          <input  id="btn-predict" type="submit"value="Submit">
+      </div>
+  </div>
+
+  <div class="">
+    {{suc_msg}}
+  </div>
+</form>
+
+
+
+{% endblock %}
